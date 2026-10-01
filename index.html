@@ -4,71 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Berke Arslan — Portfolyo</title>
-  <meta name="description" content="Berke Arslan — mobil ve full-stack projeler: SportPulse, Istanbul Routes, TFT Comp Advisor, LexPulse, CoachFlow." />
+  <meta name="description" content="Berke Arslan — AI destekli ürün geliştirici: SportPulse, Istanbul Routes, LexPulse, TFT Comp Advisor, CoachFlow." />
   <meta property="og:title" content="Berke Arslan — Portfolyo" />
-  <meta property="og:description" content="Mobil ve full-stack projelerim." />
-  <meta property="og:image" content="assets/avatar.jpg" />
+  <meta property="og:description" content="AI ile fikirden yayına taşıdığım ürünler." />
+  <meta property="og:image" content="https://berke.cc/assets/shots/sp-3.jpg" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top">berke<span>.</span>arslan</a>
-    <nav>
-      <a href="#projects" data-i18n="nav.projects">Projeler</a>
-      <a href="#skills" data-i18n="nav.skills">Yetenekler</a>
-      <a href="#contact" data-i18n="nav.contact">İletişim</a>
-      <button class="lang" id="lang" aria-label="Dil değiştir">EN</button>
-    </nav>
+  <div class="bg"></div><div class="spot"></div>
+  <nav>
+    <b>berke.cc</b>
+    <a href="#work" data-i18n="nav.work">Projeler</a>
+    <a href="#cv" data-i18n="nav.about">Hakkımda</a>
+    <a href="#contact" data-i18n="nav.contact">İletişim</a>
+    <button class="lang" id="lang" aria-label="Dil değiştir">EN</button>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="badge"><i></i><span data-i18n="hero.badge">AI ile ürün geliştiriyorum</span></span>
+      <h1>Berke Arslan<br><span data-i18n="hero.title">fikirleri ürüne çevirir.</span></h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <div class="btns">
+        <a class="btn p" href="#work" data-i18n="nav.work">Projeler</a>
+        <a class="btn" href="#contact" data-i18n="nav.contact">İletişim</a>
+        <a class="btn" href="https://github.com/arslanberke" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="stack" id="stack"></div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <img class="avatar" src="assets/avatar.jpg" alt="Berke Arslan" width="132" height="132" />
-      <div>
-        <p class="eyebrow mono" data-i18n="hero.eyebrow">Merhaba, ben</p>
-        <h1>Berke Arslan</h1>
-        <p class="role" data-i18n="hero.role">Mobil &amp; Full-Stack Geliştirici</p>
-        <p class="lead" data-i18n="hero.lead">Fikirden yayına kadar uçtan uca ürün geliştiriyorum: React Native / Expo ile mobil uygulamalar, Next.js ile web, Supabase ve Python ile backend. Gerçek veriyle çalışan, kullanıcının işini kısaltan araçlar yapmayı seviyorum.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects" data-i18n="hero.cta">Projelere göz at</a>
-          <a class="btn" href="https://github.com/arslanberke" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="mailto:arslanberke95@gmail.com" data-i18n="hero.mail">E-posta</a>
-        </div>
-      </div>
-    </section>
+  <div class="sec-h" id="work"><small data-i18n="work.eyebrow">Seçili işler</small><h2 data-i18n="work.title">Yaptığım ürünler</h2></div>
+  <section class="case">
+    <div class="sticky"><div class="stage" id="stage"><div class="glow" id="glow"></div></div></div>
+    <div id="steps"></div>
+  </section>
 
-    <section id="projects">
-      <h2 data-i18n="projects.title">Projeler</h2>
-      <div class="grid" id="project-grid"></div>
-    </section>
+  <div class="sec-h" id="cv"><small data-i18n="about.eyebrow">Hakkımda</small><h2 data-i18n="about.title">Nasıl çalışıyorum</h2></div>
+  <div class="wrap"><div class="grid" id="bento"></div></div>
 
-    <section id="skills">
-      <h2 data-i18n="skills.title">Yetenekler</h2>
-      <div class="skills">
-        <div><h3 data-i18n="skills.mobile">Mobil</h3><p>React Native, Expo, Expo Router, NativeWind, Reanimated, iOS Live Activities</p></div>
-        <div><h3 data-i18n="skills.web">Web</h3><p>Next.js (App Router), React, TypeScript, TailwindCSS, shadcn/ui</p></div>
-        <div><h3>Backend</h3><p>Supabase (Postgres, RLS, Realtime, Edge Functions), Prisma, Python, FastAPI</p></div>
-        <div><h3 data-i18n="skills.data">Veri &amp; AI</h3><p data-i18n="skills.dataText">LLM pipeline'ları (Gemini / OpenAI), olasılıksal karar modelleri, harici API entegrasyonları</p></div>
-        <div><h3 data-i18n="skills.maps">Harita &amp; Rota</h3><p>MapLibre GL, Valhalla, 2-opt, Open-Meteo</p></div>
-        <div><h3 data-i18n="skills.tools">Araçlar</h3><p>Git, GitHub, EAS / OTA, Zustand, TanStack Query, Zod</p></div>
-      </div>
-    </section>
+  <div class="sec-h" id="contact"><small data-i18n="contact.eyebrow">İletişim</small><h2 data-i18n="contact.title">Birlikte çalışalım.</h2></div>
+  <div class="wrap"><div class="grid" id="contactg"></div></div>
 
-    <section id="contact" class="contact">
-      <h2 data-i18n="contact.title">İletişim</h2>
-      <p data-i18n="contact.text">Bir proje, iş fırsatı ya da sadece merhaba demek için yazabilirsin.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:arslanberke95@gmail.com">arslanberke95@gmail.com</a>
-        <a class="btn" href="https://github.com/arslanberke" target="_blank" rel="noopener">github.com/arslanberke</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>© <span id="year"></span> Berke Arslan</footer>
+  <footer>© <span id="year"></span> Berke Arslan · berke.cc</footer>
   <script src="main.js"></script>
 </body>
 </html>
