@@ -135,12 +135,16 @@ ${t.skills.map(([h, p], i) => `<div class="t ${i < 2 ? "s2" : ""} reveal"><h4>${
   document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
   document.documentElement.lang = lang;
   $("lang").innerHTML = lang === "tr" ? `${FLAG.en} EN` : `${FLAG.tr} TR`;
-  localStorage.setItem("lang", lang);
 }
 
-$("lang").onclick = () => render(document.documentElement.lang === "tr" ? "en" : "tr");
+$("lang").onclick = () => {
+  const lang = document.documentElement.lang === "tr" ? "en" : "tr";
+  localStorage.setItem("lang", lang);
+  render(lang);
+};
 $("year").textContent = new Date().getFullYear();
-render(localStorage.getItem("lang") || (navigator.language.startsWith("tr") ? "tr" : "en"));
+const inTR = Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/Istanbul" || navigator.languages.some((l) => l.startsWith("tr"));
+render(localStorage.getItem("lang") || (inTR ? "tr" : "en"));
 
 addEventListener("pointermove", (e) => {
   document.body.style.setProperty("--x", e.clientX + "px");
