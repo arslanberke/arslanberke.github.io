@@ -1,6 +1,11 @@
 const MAIL = "mail@berke.cc";
 const GH = "https://github.com/arslanberke";
 
+const FLAG = {
+  tr: `<svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#e30a17"/><circle cx="11" cy="10" r="5" fill="#fff"/><circle cx="12.3" cy="10" r="4" fill="#e30a17"/><polygon fill="#fff" points="15.6,10 19.6,8.7 17.1,12.1 17.1,7.9 19.6,11.3"/></svg>`,
+  en: `<svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="u"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#u)" stroke="#c8102e" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#c8102e" stroke-width="6"/></svg>`,
+};
+
 const projects = [
   {
     name: "SportPulse", accent: "#10b981", type: "phone", shot: "assets/shots/sp-3.jpg",
@@ -129,7 +134,7 @@ ${t.skills.map(([h, p], i) => `<div class="t ${i < 2 ? "s2" : ""} reveal"><h4>${
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t[el.dataset.i18n]; });
   document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
   document.documentElement.lang = lang;
-  $("lang").textContent = lang === "tr" ? "EN" : "TR";
+  $("lang").innerHTML = lang === "tr" ? `${FLAG.en} EN` : `${FLAG.tr} TR`;
   localStorage.setItem("lang", lang);
 }
 
