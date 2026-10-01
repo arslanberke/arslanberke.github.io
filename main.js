@@ -1,4 +1,4 @@
-const MAIL = "arslanberke95@gmail.com";
+const MAIL = "info@berke.cc";
 const GH = "https://github.com/arslanberke";
 
 const projects = [
