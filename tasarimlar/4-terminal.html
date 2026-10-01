@@ -1,0 +1,30 @@
+<!doctype html><html lang="tr"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>4 · Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="frames.css">
+<style>
+*{box-sizing:border-box;margin:0}body{font-family:"JetBrains Mono",monospace;background:#050805;color:#b8f5c8;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 1px,transparent 1px 3px);pointer-events:none;z-index:50}
+.grid-bg{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(34,197,94,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(34,197,94,.07) 1px,transparent 1px);background-size:40px 40px;mask:radial-gradient(circle at 50% 30%,#000,transparent 70%)}
+.wrap{max-width:1100px;margin:auto;padding:40px 22px}
+.term{border:1px solid #1f4d2b;border-radius:10px;background:rgba(5,20,10,.8);box-shadow:0 0 40px rgba(34,197,94,.15)}
+.term .bar{padding:10px 14px;border-bottom:1px solid #1f4d2b;font-size:12px;color:#4ade80}
+.term pre{padding:24px;font-size:15px;line-height:1.8;white-space:pre-wrap;min-height:290px}
+.c{color:#22c55e}.d{color:#5e8a6a}.w{color:#fff;font-weight:800;font-size:clamp(30px,5vw,56px);line-height:1.1;text-shadow:0 0 20px rgba(74,222,128,.5)}
+.cur{display:inline-block;width:10px;height:1.1em;background:#4ade80;vertical-align:-3px;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+h2{margin:70px 0 24px;font-size:14px;color:#4ade80}h2::before{content:"$ ls ./projects"}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.p{border:1px solid #1f4d2b;border-radius:10px;padding:18px;background:rgba(5,20,10,.6);position:relative;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.p:hover{border-color:#4ade80;box-shadow:0 0 30px rgba(74,222,128,.25)}
+.p .scr{height:300px;overflow:hidden;border-radius:6px;margin-bottom:16px;background:#0b130d;display:flex;justify-content:center;align-items:flex-start;padding-top:16px}
+.p .scr .dev-phone{width:180px;filter:grayscale(.6) contrast(1.05);transition:filter .5s,transform .8s}.p:hover .scr .dev-phone{filter:none;transform:translateY(-60px)}
+.p .scr .dev-win{width:95%;filter:grayscale(.6);transition:filter .5s}.p:hover .scr .dev-win{filter:none}
+.p h3{color:#fff;font-size:18px}.p h3::before{content:"> ";color:#22c55e}.p p{font-size:13px;line-height:1.7;color:#8fc4a0;margin:8px 0}.p .t{font-size:12px;color:#4ade80}
+.glitch{position:relative}.glitch:hover{animation:g .3s steps(2) 2}@keyframes g{25%{transform:translate(-2px,1px)}50%{transform:translate(2px,-1px)}}
+</style></head><body><div class="grid-bg"></div><div class="wrap">
+<div class="term"><div class="bar">berke@cc: ~ — zsh</div><pre id="out"></pre></div>
+<h2></h2><div class="list" id="l"></div>
+<p style="margin-top:60px;color:#5e8a6a">$ contact --mail <a style="color:#4ade80" href="mailto:arslanberke95@gmail.com">arslanberke95@gmail.com</a> --github <a style="color:#4ade80" href="https://github.com/arslanberke">@arslanberke</a></p></div>
+<script src="data.js"></script><script src="reveal.js"></script><script>
+const lines=[["c","$ whoami"],["w","Berke Arslan"],["d","# Mobil & Full-Stack Geliştirici"],["c","$ cat stack.txt"],["","React Native · Expo · Next.js · Supabase · Python · FastAPI"],["c","$ echo $MOTTO"],["","Gerçek veriyle çalışan, insanların işini kısaltan ürünler."]];
+let i=0,j=0,html="";const step=()=>{if(i>=lines.length){out.innerHTML=html+'<span class="cur"></span>';return}const [c,t]=lines[i];j++;out.innerHTML=html+`<span class="${c}">${t.slice(0,j)}</span><span class="cur"></span>`;if(j>=t.length){html+=`<span class="${c}">${t}</span>\n`;i++;j=0;setTimeout(step,250)}else setTimeout(step,c==="w"?60:22)};step();
+l.innerHTML=PROJECTS.map(p=>`<div class="p glitch reveal"><div class="scr">${frame(p,0)}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="t">[${p.tags.join("] [")}]</div></div>`).join("");observeReveal();
+</script></body></html>

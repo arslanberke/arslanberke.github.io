@@ -1,0 +1,41 @@
+<!doctype html><html lang="tr"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2 · Bento</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="frames.css">
+<style>
+a{color:inherit;text-decoration:none}*{box-sizing:border-box;margin:0}body{font-family:Geist,Inter,sans-serif;background:#f4f4f2;color:#141414}
+.wrap{max-width:1180px;margin:auto;padding:28px 20px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font-weight:600}.top a{color:#141414;text-decoration:none;margin-left:18px;font-weight:500;color:#666}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.t{position:relative;border-radius:26px;background:#fff;padding:24px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.t:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(0,0,0,.25)}
+.intro{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;background:#141414;color:#fff}
+.intro h1{font-size:54px;letter-spacing:-.04em;line-height:1}.intro p{color:#a3a3a3;font-size:17px;line-height:1.5;max-width:420px}
+.av{width:64px;height:64px;border-radius:18px;background:url(shots/avatar.jpg) center/cover,#333}
+.stat{display:flex;flex-direction:column;justify-content:flex-end}.stat b{font-size:56px;letter-spacing:-.04em}.stat span{color:#777}
+.proj{grid-row:span 2}.proj.wide{grid-column:span 2}
+.proj .meta{position:relative;z-index:2}.proj small{color:#777;font-size:13px}.proj h3{font-size:24px;letter-spacing:-.02em;margin-top:2px}
+.proj .dev-phone{position:absolute;width:62%;left:19%;top:110px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.proj:hover .dev-phone{transform:translateY(-30px) rotate(-2deg)}
+.proj.wide .dev-win{position:absolute;width:92%;left:4%;top:100px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.proj.wide:hover .dev-win{transform:translateY(-24px) scale(1.02)}
+.proj.wide.phones .dev-phone{width:34%}.proj.wide.phones .dev-phone:nth-of-type(1){left:10%}.proj.wide.phones .dev-phone:nth-of-type(2){left:56%;top:150px}
+.arrow{position:absolute;right:20px;top:20px;width:38px;height:38px;border-radius:50%;background:#f0f0ee;display:grid;place-items:center;z-index:3;transition:transform .3s}.t:hover .arrow{transform:rotate(-45deg);background:#141414;color:#fff}
+.stackt{grid-column:span 2}.marq{display:flex;gap:10px;width:max-content;animation:m 25s linear infinite;margin-top:20px}.marq span{padding:10px 16px;border-radius:12px;background:#f4f4f2;font-weight:500;white-space:nowrap}@keyframes m{to{transform:translateX(-50%)}}
+.contact{background:#10b981;color:#fff;display:flex;flex-direction:column;justify-content:space-between}.contact a{color:#fff;font-size:20px;font-weight:600}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#10b981;margin-right:6px;animation:b 1.5s infinite}@keyframes b{50%{opacity:.3}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.intro,.proj.wide,.stackt{grid-column:span 2}}
+</style></head><body><div class="wrap">
+<div class="top"><span>berke.cc</span><div><a href="#">Projeler</a><a href="#">CV</a><a href="#">EN</a></div></div>
+<div class="grid" id="g"></div></div>
+<script src="data.js"></script><script src="reveal.js"></script><script>
+const P=PROJECTS,arrow='<span class="arrow">→</span>';
+const pj=(p,cls,inner)=>`<a class="t proj ${cls} reveal" href="${p.repo||'#'}">${arrow}<div class="meta"><small>${p.kind}</small><h3>${p.name}</h3></div>${inner}</a>`;
+g.innerHTML=`<div class="t intro reveal"><div class="av"></div><div><h1>Berke<br>Arslan</h1><p style="margin-top:14px">${ME.lead}</p></div></div>
+<div class="t stat reveal"><b>5</b><span>yayında / geliştirilen ürün</span></div>
+<div class="t stat reveal"><span><i class="dot"></i>Şu an</span><b style="font-size:26px;margin-top:6px">SportPulse v2 üzerinde</b></div>
+${pj(P[0],"wide phones",frame(P[0],0)+frame(P[0],1))}
+${pj(P[1],"",frame(P[1],0))}${pj(P[4],"",frame(P[4],0))}
+${pj(P[2],"wide",frame(P[2],0))}${pj(P[3],"wide",frame(P[3],0))}
+<div class="t stackt reveal"><small style="color:#777">Teknolojiler</small><div class="marq">${[...Array(2)].map(()=>["React Native","Expo","TypeScript","Next.js","Supabase","PostgreSQL","Prisma","Python","FastAPI","MapLibre","TailwindCSS","Gemini"].map(t=>`<span>${t}</span>`).join("")).join("")}</div></div>
+<div class="t contact reveal"><small>Birlikte çalışalım</small><a href="mailto:${ME.mail}">${ME.mail}</a></div>
+<div class="t reveal" style="display:flex;flex-direction:column;justify-content:space-between"><small style="color:#777">GitHub</small><a href="${ME.gh}" style="color:#141414;font-size:20px;font-weight:600">@arslanberke</a></div>`;
+observeReveal();
+</script></body></html>
