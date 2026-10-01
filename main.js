@@ -8,7 +8,7 @@ const FLAG = {
 
 const projects = [
   {
-    name: "SportPulse", accent: "#10b981", type: "phone", shot: "assets/shots/sp-3.jpg",
+    name: "SportPulse", accent: "#10b981", type: "phone", shot: "assets/shots/sp-3.jpg", shotEn: "assets/shots/sp-en.jpg",
     repo: "https://github.com/arslanberke/sportpulse",
     tags: ["React Native", "Expo", "Supabase", "Edge Functions", "TanStack Query"],
     tr: { kind: "iOS uygulaması", desc: "Hangi maç, ne zaman, hangi kanalda: futbol, basketbol, F1, MotoGP, UFC, tenis ve voleybol için tek kronolojik fikstür akışı, canlı skor ve hatırlatıcılar." },
@@ -34,7 +34,7 @@ const projects = [
     en: { kind: "In-game overlay", desc: "Overwolf overlay and decision service giving live comp, economy and augment advice for Teamfight Tactics." },
   },
   {
-    name: "CoachFlow", accent: "#16a34a", type: "phone", shot: "assets/shots/cf-login.jpg",
+    name: "CoachFlow", accent: "#16a34a", type: "phone", shot: "assets/shots/cf-login.jpg", shotEn: "assets/shots/cf-en.jpg",
     repo: "https://github.com/arslanberke/coachflow",
     tags: ["React Native", "Expo", "Supabase", "Zod"],
     tr: { kind: "Mobil uygulama", desc: "Özel spor hocaları ve öğrencileri için ders planlama: hoca boş saatlerini yayınlar, öğrenci tek dokunuşla ders ister." },
@@ -91,8 +91,8 @@ const i18n = {
 
 const frame = (p) =>
   p.type === "phone"
-    ? `<div class="dev-phone"><div class="dev-body"><img src="${p.shot}" alt="${p.name}" loading="lazy"><i class="island"></i></div></div>`
-    : `<div class="dev-win"><div class="dev-bar"><i></i><i></i><i></i></div><img src="${p.shot}" alt="${p.name}" loading="lazy"></div>`;
+    ? `<div class="dev-phone"><div class="dev-body"><img src="${p.shot}" data-tr="${p.shot}" data-en="${p.shotEn || p.shot}" alt="${p.name}" loading="lazy"><i class="island"></i></div></div>`
+    : `<div class="dev-win"><div class="dev-bar"><i></i><i></i><i></i></div><img src="${p.shot}" data-tr="${p.shot}" data-en="${p.shotEn || p.shot}" alt="${p.name}" loading="lazy"></div>`;
 
 const $ = (id) => document.getElementById(id);
 const reveal = new IntersectionObserver(
@@ -117,6 +117,7 @@ const stepIO = new IntersectionObserver(
 
 function render(lang) {
   const t = i18n[lang];
+  document.querySelectorAll("img[data-en]").forEach((img) => { img.src = img.dataset[lang]; });
   $("steps").innerHTML = projects.map((p, i) => `<div class="st" data-i="${i}"><small>0${i + 1} · ${p[lang].kind}</small><h3>${p.name}</h3><p>${p[lang].desc}</p><ul>${p.tags.map((x) => `<li>${x}</li>`).join("")}</ul>${p.repo ? `<a class="lnk" href="${p.repo}" target="_blank" rel="noopener">${t.github}</a>` : `<span class="lnk priv">${t.private}</span>`}</div>`).join("");
   document.querySelectorAll(".st").forEach((s) => stepIO.observe(s));
   show(active);
