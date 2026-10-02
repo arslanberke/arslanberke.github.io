@@ -57,3 +57,4 @@ footer{text-align:center;padding:40px 20px 60px;color:#6b7090;font-size:14px}
 
 .lang{background:none;border:0;color:#c8cbe0;font:inherit;cursor:pointer;padding:0}.lang:hover{color:#fff}
 .lang{display:inline-flex;align-items:center;gap:6px}.lang svg{width:20px;height:13px;border-radius:2px;display:block}
+.st .role-l{font-size:14px;color:#a3a7c2;margin-top:10px}.st .role-l b{color:#e5e7f0;font-weight:600}

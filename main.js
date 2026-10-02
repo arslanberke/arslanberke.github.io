@@ -11,34 +11,34 @@ const projects = [
     name: "SportPulse", accent: "#10b981", type: "phone", shot: "assets/shots/sp-3.jpg", shotEn: "assets/shots/sp-en.jpg",
     repo: "https://github.com/arslanberke/sportpulse",
     tags: ["React Native", "Expo", "Supabase", "Edge Functions", "TanStack Query"],
-    tr: { kind: "iOS uygulaması", desc: "Hangi maç, ne zaman, hangi kanalda: futbol, basketbol, F1, MotoGP, UFC, tenis ve voleybol için tek kronolojik fikstür akışı, canlı skor ve hatırlatıcılar." },
-    en: { kind: "iOS app", desc: "Which match, when, and on which channel: one chronological fixture feed with live scores and reminders for football, basketball, F1, MotoGP, UFC, tennis and volleyball." },
+    tr: { kind: "iOS uygulaması", desc: "Hangi maç, ne zaman, hangi kanalda: futbol, basketbol, F1, MotoGP, UFC, tenis ve voleybol için tek kronolojik fikstür akışı, canlı skor ve hatırlatıcılar.", role: "Fikir, ekran tasarımı ve tüm özellik kararları benim; AI ajanlarını yönlendirip her sürümü telefonda test ettim." },
+    en: { kind: "iOS app", desc: "Which match, when, and on which channel: one chronological fixture feed with live scores and reminders for football, basketball, F1, MotoGP, UFC, tennis and volleyball.", role: "I set the idea, screens and every feature decision; directed AI agents and tested each build on my phone." },
   },
   {
     name: "Istanbul Routes", accent: "#1f5f4f", type: "phone", shot: "assets/shots/ir-1.jpg", repo: null,
     tags: ["React Native", "MapLibre GL", "Valhalla", "Supabase", "Zustand"],
-    tr: { kind: "Mobil gezi planlayıcı", desc: "Süreni ve ilgi alanlarını seç; yürüyüş + vapur/tramvay/metro bacaklarıyla optimize edilmiş bir İstanbul rotası çıksın." },
-    en: { kind: "Mobile trip planner", desc: "Pick your time budget and interests; get an optimized Istanbul route with walking, ferry, tram and metro legs." },
+    tr: { kind: "Mobil gezi planlayıcı", desc: "Süreni ve ilgi alanlarını seç; yürüyüş + vapur/tramvay/metro bacaklarıyla optimize edilmiş bir İstanbul rotası çıksın.", role: "Rota mantığını ve kullanıcı akışını tasarladım; AI çıktısını telefonda test ettim." },
+    en: { kind: "Mobile trip planner", desc: "Pick your time budget and interests; get an optimized Istanbul route with walking, ferry, tram and metro legs.", role: "I designed the routing logic and user flow, and tested the AI-built output on my phone." },
   },
   {
     name: "LexPulse", accent: "#b45309", type: "browser", shot: "assets/shots/lex-1.jpg", repo: null,
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini"],
-    tr: { kind: "Web platformu", desc: "AI destekli hukuk haberleri: resmî kaynaklardan derlenen gelişmeler yapay zekâ ile özetlenir, editör onayından geçer ve iki dakikada okunur." },
-    en: { kind: "Web platform", desc: "AI-powered legal news: updates from official sources are summarized by AI, reviewed by an editor and readable in under two minutes." },
+    tr: { kind: "Web platformu", desc: "AI destekli hukuk haberleri: resmî kaynaklardan derlenen gelişmeler yapay zekâ ile özetlenir, editör onayından geçer ve iki dakikada okunur.", role: "Hukuk geçmişimle kaynakları ve editör akışını belirledim; AI özetlerinin doğruluğunu kontrol ettim." },
+    en: { kind: "Web platform", desc: "AI-powered legal news: updates from official sources are summarized by AI, reviewed by an editor and readable in under two minutes.", role: "Used my legal background to pick sources and design the editor flow; checked AI summaries for accuracy." },
   },
   {
     name: "TFT Comp Advisor", accent: "#6366f1", type: "browser", shot: "assets/shots/tft-1.jpg",
     repo: "https://github.com/arslanberke/tft-helper",
     tags: ["Python", "FastAPI", "Overwolf", "Pydantic"],
-    tr: { kind: "Oyun içi overlay", desc: "Teamfight Tactics için canlı kompozisyon, ekonomi ve augment önerileri veren Overwolf overlay'i ve karar servisi." },
-    en: { kind: "In-game overlay", desc: "Overwolf overlay and decision service giving live comp, economy and augment advice for Teamfight Tactics." },
+    tr: { kind: "Oyun içi overlay", desc: "Teamfight Tactics için canlı kompozisyon, ekonomi ve augment önerileri veren Overwolf overlay'i ve karar servisi.", role: "Oyun bilgimle öneri kurallarını tanımladım; overlay'i deneyip hataları raporladım." },
+    en: { kind: "In-game overlay", desc: "Overwolf overlay and decision service giving live comp, economy and augment advice for Teamfight Tactics.", role: "Defined the advice rules from game knowledge; tested the overlay and reported bugs." },
   },
   {
     name: "CoachFlow", accent: "#16a34a", type: "phone", shot: "assets/shots/cf-login.jpg", shotEn: "assets/shots/cf-en.jpg",
     repo: "https://github.com/arslanberke/coachflow",
     tags: ["React Native", "Expo", "Supabase", "Zod"],
-    tr: { kind: "Mobil uygulama", desc: "Özel spor hocaları ve öğrencileri için ders planlama: hoca boş saatlerini yayınlar, öğrenci tek dokunuşla ders ister." },
-    en: { kind: "Mobile app", desc: "Lesson scheduling for private coaches and their students: coaches publish open slots, students request a lesson in one tap." },
+    tr: { kind: "Mobil uygulama", desc: "Özel spor hocaları ve öğrencileri için ders planlama: hoca boş saatlerini yayınlar, öğrenci tek dokunuşla ders ister.", role: "Hoca ve öğrenci akışlarını kurguladım; AI'ın yazdığı ekranları uçtan uca test ettim." },
+    en: { kind: "Mobile app", desc: "Lesson scheduling for private coaches and their students: coaches publish open slots, students request a lesson in one tap.", role: "Designed the coach and student flows; tested the AI-built screens end to end." },
   },
 ];
 
@@ -47,16 +47,16 @@ const tech = ["React Native", "Expo", "TypeScript", "Next.js", "Supabase", "Post
 const i18n = {
   tr: {
     "nav.work": "Projeler", "nav.about": "Hakkımda", "nav.contact": "İletişim",
-    "hero.badge": "AI ile ürün geliştiriyorum", "hero.title": "fikirleri ürüne çevirir.",
-    "hero.lead": "Ürünü ben tasarlıyorum, kodu AI ajanlarıyla (Devin, Claude, ChatGPT) yazdırıyorum; test edip yayına alıyorum.",
+    "hero.badge": "Avukat · AI destekli ürün geliştirici", "hero.title": "fikirleri ürüne çevirir.",
+    "hero.lead": "Manisa Barosu'na kayıtlı avukatım. Ürünü ben tasarlıyorum, AI ajanlarını (Devin, Claude, ChatGPT) yönlendirip çıktıyı inceliyorum, telefonda test edip yayına alıyorum.",
     "work.eyebrow": "Seçili işler", "work.title": "Yaptığım ürünler",
     "about.eyebrow": "Hakkımda", "about.title": "Nasıl çalışıyorum",
     "contact.eyebrow": "İletişim", "contact.title": "Birlikte çalışalım.",
     role: "AI destekli ürün geliştirici",
-    bio: "Klasik anlamda yazılımcı değilim; “vibe coding” ile çalışıyorum. Neyin yapılacağına ve kullanıcı deneyimine ben karar veriyorum, kodu AI yazıyor. Bu şekilde tek başıma 5 ürünü fikirden yayına taşıdım.",
+    bio: "İstanbul Üniversitesi Hukuk mezunu, Manisa Barosu'na kayıtlı avukatım. Klasik anlamda yazılımcı değilim; “vibe coding” ile çalışıyorum. Neyin yapılacağına ve kullanıcı deneyimine ben karar veriyorum, kodu AI yazıyor. Bu şekilde tek başıma 5 ürünü fikirden yayına taşıdım.",
     statNum: "AI ile geliştirdiğim ürün", now: "Şu an", nowText: "SportPulse'u geliştiriyorum",
-    github: "GitHub'da incele →", private: "🔒 Özel repo",
-    mail: "E-posta", copy: "Kopyala", copied: "Kopyalandı ✓", ghText: "Açık kaynak projelerim",
+    github: "GitHub'da incele →", private: "🔒 Özel repo · demo isteğe göre",
+    mail: "E-posta", copy: "Kopyala", copied: "Kopyalandı ✓", ghText: "Açık kaynak projelerim", cv: "CV indir", cvText: "Tek sayfa PDF (İngilizce)", myRole: "Benim rolüm",
     skills: [
       ["Fikir & ürün tasarımı", "Problemi bulup ekranları, akışları ve özellikleri kurguluyorum; neyin önemli olduğuna karar veriyorum."],
       ["AI ile geliştirme", "Devin, Claude ve ChatGPT gibi AI ajanlarına işi tarif edip kodu yazdırıyorum; çıktıyı inceleyip yönlendiriyorum."],
@@ -68,16 +68,16 @@ const i18n = {
   },
   en: {
     "nav.work": "Work", "nav.about": "About", "nav.contact": "Contact",
-    "hero.badge": "Building products with AI", "hero.title": "turns ideas into products.",
-    "hero.lead": "I design the product, have AI agents (Devin, Claude, ChatGPT) write the code, then test it and ship it.",
+    "hero.badge": "Attorney · AI-assisted product builder", "hero.title": "turns ideas into products.",
+    "hero.lead": "Licensed Turkish attorney. I design the product, direct AI agents (Devin, Claude, ChatGPT), review their output, then test it on real devices and ship it.",
     "work.eyebrow": "Selected work", "work.title": "Products I've built",
     "about.eyebrow": "About", "about.title": "How I work",
     "contact.eyebrow": "Contact", "contact.title": "Let's work together.",
     role: "AI-assisted product builder",
-    bio: "I'm not a traditional software engineer; I work with “vibe coding”. I decide what gets built and how it feels to use, and AI writes the code. That's how I've taken 5 products from idea to launch on my own.",
+    bio: "Istanbul University law graduate and licensed attorney (Manisa Bar Association). I'm not a traditional software engineer; I work with “vibe coding”. I decide what gets built and how it feels to use, and AI writes the code. That's how I've taken 5 products from idea to launch on my own.",
     statNum: "products built with AI", now: "Now", nowText: "Working on SportPulse",
-    github: "View on GitHub →", private: "🔒 Private repo",
-    mail: "Email", copy: "Copy", copied: "Copied ✓", ghText: "My open-source projects",
+    github: "View on GitHub →", private: "🔒 Private repo · demo on request",
+    mail: "Email", copy: "Copy", copied: "Copied ✓", ghText: "My open-source projects", cv: "Download CV", cvText: "One-page PDF", myRole: "My role",
     skills: [
       ["Idea & product design", "I find the problem and shape the screens, flows and features; I decide what matters."],
       ["Building with AI", "I describe the work to AI agents like Devin, Claude and ChatGPT, review the output and steer it."],
@@ -118,7 +118,7 @@ const stepIO = new IntersectionObserver(
 function render(lang) {
   const t = i18n[lang];
   document.querySelectorAll("img[data-en]").forEach((img) => { img.src = img.dataset[lang]; });
-  $("steps").innerHTML = projects.map((p, i) => `<div class="st" data-i="${i}"><small>0${i + 1} · ${p[lang].kind}</small><h3>${p.name}</h3><p>${p[lang].desc}</p><ul>${p.tags.map((x) => `<li>${x}</li>`).join("")}</ul>${p.repo ? `<a class="lnk" href="${p.repo}" target="_blank" rel="noopener">${t.github}</a>` : `<span class="lnk priv">${t.private}</span>`}</div>`).join("");
+  $("steps").innerHTML = projects.map((p, i) => `<div class="st" data-i="${i}"><small>0${i + 1} · ${p[lang].kind}</small><h3>${p.name}</h3><p>${p[lang].desc}</p><p class="role-l"><b>${t.myRole}:</b> ${p[lang].role}</p><ul>${p.tags.map((x) => `<li>${x}</li>`).join("")}</ul>${p.repo ? `<a class="lnk" href="${p.repo}" target="_blank" rel="noopener">${t.github}</a>` : `<span class="lnk priv">${t.private}</span>`}</div>`).join("");
   document.querySelectorAll(".st").forEach((s) => stepIO.observe(s));
   show(active);
 
@@ -129,10 +129,12 @@ ${t.skills.map(([h, p], i) => `<div class="t ${i < 2 ? "s2" : ""} reveal"><h4>${
 <div class="marq-w"><div class="marq">${[0, 1].map(() => tech.map((x) => `<span>${x}</span>`).join("")).join("")}</div></div>`;
 
   $("contactg").innerHTML = `<div class="t s2 mail reveal"><h4>${t.mail}</h4><b><a href="mailto:${MAIL}">${MAIL}</a></b><button id="copy">${t.copy}</button></div>
-<a class="t s2 soc reveal" href="${GH}" target="_blank" rel="noopener"><span class="ar">→</span><h4 lang="en">GitHub</h4><b>@arslanberke</b><p>${t.ghText}</p></a>`;
+<a class="t s2 soc reveal" href="${GH}" target="_blank" rel="noopener"><span class="ar">→</span><h4 lang="en">GitHub</h4><b>@arslanberke</b><p>${t.ghText}</p></a>
+<a class="t s2 soc reveal" href="cv.pdf" target="_blank" rel="noopener"><span class="ar">↓</span><h4>CV</h4><b>${t.cv}</b><p>${t.cvText}</p></a>`;
   $("copy").onclick = (e) => { navigator.clipboard.writeText(MAIL); e.target.textContent = t.copied; };
 
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t[el.dataset.i18n]; });
+  $("cvbtn").textContent = t.cv;
   document.querySelectorAll(".reveal").forEach((el) => reveal.observe(el));
   document.documentElement.lang = lang;
   $("lang").innerHTML = lang === "tr" ? `${FLAG.en} EN` : `${FLAG.tr} TR`;
