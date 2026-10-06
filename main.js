@@ -40,6 +40,12 @@ const projects = [
     tr: { kind: "Mobil uygulama", desc: "Özel spor hocaları ve öğrencileri için ders planlama: hoca boş saatlerini yayınlar, öğrenci tek dokunuşla ders ister.", role: "Hoca ve öğrenci akışlarını kurguladım; AI'ın yazdığı ekranları uçtan uca test ettim." },
     en: { kind: "Mobile app", desc: "Lesson scheduling for private coaches and their students: coaches publish open slots, students request a lesson in one tap.", role: "Designed the coach and student flows; tested the AI-built screens end to end." },
   },
+  {
+    name: "SyncIt", accent: "#8b5cf6", type: "browser", shot: "assets/shots/syncit-1.jpg", repo: null, site: "https://getsyncit.xyz",
+    tags: ["Node.js", "Stremio add-on", "Cloudflare", "Creem"],
+    tr: { kind: "Ücretli Stremio eklentisi", desc: "Altyazıları oynattığın dosyaya göre senkronlar: 35 dilde, ilk satırdan son satıra kaymadan. 48 saat ücretsiz deneme, sonra aylık abonelik.", role: "Kendi yaşadığım kayan altyazı sorunundan çıkardım; ürünü, fiyatı ve ödeme akışını belirledim, AI ajanlarıyla geliştirip kendi TV'mde test ettim." },
+    en: { kind: "Paid Stremio add-on", desc: "Syncs subtitles to the exact file you're playing: 35 languages, in sync from the first line to the last. 48-hour free trial, then a monthly subscription.", role: "Started from my own out-of-sync subtitle problem; set the product, pricing and billing flow, built it with AI agents and tested it on my own TV." },
+  },
 ];
 
 const tech = ["React Native", "Expo", "TypeScript", "Next.js", "Supabase", "PostgreSQL", "Prisma", "Python", "FastAPI", "MapLibre", "TailwindCSS", "Gemini", "Zustand", "Deno"];
@@ -55,7 +61,7 @@ const i18n = {
     role: "AI destekli ürün geliştirici",
     bio: "İstanbul Üniversitesi Hukuk mezunu, Manisa Barosu'na kayıtlı avukatım. Klasik anlamda yazılımcı değilim; “vibe coding” ile çalışıyorum. Neyin yapılacağına ve kullanıcı deneyimine ben karar veriyorum, kodu AI yazıyor. Bu şekilde tek başıma 5 ürünü fikirden yayına taşıdım.",
     statNum: "AI ile geliştirdiğim ürün", now: "Şu an", nowText: "SportPulse'u geliştiriyorum",
-    github: "GitHub'da incele →", private: "🔒 Özel repo · demo isteğe göre",
+    github: "GitHub'da incele →", private: "🔒 Özel repo · demo isteğe göre", site: "Siteyi aç →",
     mail: "E-posta", copy: "Kopyala", copied: "Kopyalandı ✓", ghText: "Açık kaynak projelerim", cv: "CV indir", cvText: "Tek sayfa PDF (İngilizce)", myRole: "Benim rolüm",
     skills: [
       ["Fikir & ürün tasarımı", "Problemi bulup ekranları, akışları ve özellikleri kurguluyorum; neyin önemli olduğuna karar veriyorum."],
@@ -76,7 +82,7 @@ const i18n = {
     role: "AI-assisted product builder",
     bio: "Istanbul University law graduate and licensed attorney (Manisa Bar Association). I'm not a traditional software engineer; I work with “vibe coding”. I decide what gets built and how it feels to use, and AI writes the code. That's how I've taken 5 products from idea to launch on my own.",
     statNum: "products built with AI", now: "Now", nowText: "Working on SportPulse",
-    github: "View on GitHub →", private: "🔒 Private repo · demo on request",
+    github: "View on GitHub →", private: "🔒 Private repo · demo on request", site: "Visit site →",
     mail: "Email", copy: "Copy", copied: "Copied ✓", ghText: "My open-source projects", cv: "Download CV", cvText: "One-page PDF", myRole: "My role",
     skills: [
       ["Idea & product design", "I find the problem and shape the screens, flows and features; I decide what matters."],
@@ -118,7 +124,7 @@ const stepIO = new IntersectionObserver(
 function render(lang) {
   const t = i18n[lang];
   document.querySelectorAll("img[data-en]").forEach((img) => { img.src = img.dataset[lang]; });
-  $("steps").innerHTML = projects.map((p, i) => `<div class="st" data-i="${i}"><small>0${i + 1} · ${p[lang].kind}</small><h3>${p.name}</h3><p>${p[lang].desc}</p><p class="role-l"><b>${t.myRole}:</b> ${p[lang].role}</p><ul>${p.tags.map((x) => `<li>${x}</li>`).join("")}</ul>${p.repo ? `<a class="lnk" href="${p.repo}" target="_blank" rel="noopener">${t.github}</a>` : `<span class="lnk priv">${t.private}</span>`}</div>`).join("");
+  $("steps").innerHTML = projects.map((p, i) => `<div class="st" data-i="${i}"><small>0${i + 1} · ${p[lang].kind}</small><h3>${p.name}</h3><p>${p[lang].desc}</p><p class="role-l"><b>${t.myRole}:</b> ${p[lang].role}</p><ul>${p.tags.map((x) => `<li>${x}</li>`).join("")}</ul>${p.repo ? `<a class="lnk" href="${p.repo}" target="_blank" rel="noopener">${t.github}</a>` : p.site ? `<a class="lnk" href="${p.site}" target="_blank" rel="noopener">${t.site}</a>` : `<span class="lnk priv">${t.private}</span>`}</div>`).join("");
   document.querySelectorAll(".st").forEach((s) => stepIO.observe(s));
   show(active);
 
