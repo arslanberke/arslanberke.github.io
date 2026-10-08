@@ -59,7 +59,7 @@ const i18n = {
     "about.eyebrow": "Hakkımda", "about.title": "Nasıl çalışıyorum",
     "contact.eyebrow": "İletişim", "contact.title": "Birlikte çalışalım.",
     role: "AI destekli ürün geliştirici",
-    bio: "İstanbul Üniversitesi Hukuk mezunu, Manisa Barosu'na kayıtlı avukatım. Klasik anlamda yazılımcı değilim; “vibe coding” ile çalışıyorum. Neyin yapılacağına ve kullanıcı deneyimine ben karar veriyorum, kodu AI yazıyor. Bu şekilde tek başıma 5 ürünü fikirden yayına taşıdım.",
+    bio: `İstanbul Üniversitesi Hukuk mezunu, Manisa Barosu'na kayıtlı avukatım. Klasik anlamda yazılımcı değilim; “vibe coding” ile çalışıyorum. Neyin yapılacağına ve kullanıcı deneyimine ben karar veriyorum, kodu AI yazıyor. Bu şekilde tek başıma ${projects.length} ürünü fikirden yayına taşıdım.`,
     statNum: "AI ile geliştirdiğim ürün", now: "Şu an", nowText: "SportPulse'u geliştiriyorum",
     github: "GitHub'da incele →", private: "🔒 Özel repo · demo isteğe göre", site: "Siteyi aç →",
     mail: "E-posta", copy: "Kopyala", copied: "Kopyalandı ✓", ghText: "Açık kaynak projelerim", cv: "CV indir", cvText: "Tek sayfa PDF (İngilizce)", myRole: "Benim rolüm",
@@ -80,7 +80,7 @@ const i18n = {
     "about.eyebrow": "About", "about.title": "How I work",
     "contact.eyebrow": "Contact", "contact.title": "Let's work together.",
     role: "AI-assisted product builder",
-    bio: "Istanbul University law graduate and licensed attorney (Manisa Bar Association). I'm not a traditional software engineer; I work with “vibe coding”. I decide what gets built and how it feels to use, and AI writes the code. That's how I've taken 5 products from idea to launch on my own.",
+    bio: `Istanbul University law graduate and licensed attorney (Manisa Bar Association). I'm not a traditional software engineer; I work with “vibe coding”. I decide what gets built and how it feels to use, and AI writes the code. That's how I've taken ${projects.length} products from idea to launch on my own.`,
     statNum: "products built with AI", now: "Now", nowText: "Working on SportPulse",
     github: "View on GitHub →", private: "🔒 Private repo · demo on request", site: "Visit site →",
     mail: "Email", copy: "Copy", copied: "Copied ✓", ghText: "My open-source projects", cv: "Download CV", cvText: "One-page PDF", myRole: "My role",
@@ -129,7 +129,7 @@ function render(lang) {
   show(active);
 
   $("bento").innerHTML = `<div class="t s2 about reveal"><div class="av"></div><div><h3>Berke Arslan</h3><div class="role">${t.role}</div><p>${t.bio}</p></div></div>
-<div class="t stat reveal"><b>5</b><span>${t.statNum}</span></div>
+<div class="t stat reveal"><b>${projects.length}</b><span>${t.statNum}</span></div>
 <div class="t stat reveal"><span><i class="dot"></i> ${t.now}</span><b style="font-size:24px;margin-top:10px;line-height:1.2">${t.nowText}</b></div>
 ${t.skills.map(([h, p], i) => `<div class="t ${i < 2 ? "s2" : ""} reveal"><h4>${h}</h4><p>${p}</p></div>`).join("")}
 <div class="marq-w"><div class="marq">${[0, 1].map(() => tech.map((x) => `<span>${x}</span>`).join("")).join("")}</div></div>`;
